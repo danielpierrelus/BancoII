@@ -46,7 +46,7 @@ def read_log(entradaLog):
             if operation[0] in transaction_list:
                 operations_list.append(operation)
 
-    return operations_list, undo_operations
+    return operations_list #, undo_operations
 
 def check_ckpts(data, ckpt, commit, start, end):
     # Inicializa uma lista para armazenar operações a serem desfeitas
@@ -93,10 +93,10 @@ try:
 
     # Lê o log, verifica transações e operações a serem desfeitas
     undo_operations = read_log(entradaLog)
+    print(undo_operations)
 
     # Verifica valores e atualiza o banco de dados
     for op in undo_operations:
-        op = op[0]
         if len(op) >= 4:  
             cursor.execute(f'select {op[2]} from vintage_log where id = {op[1]}')
             result = cursor.fetchone()
