@@ -3,9 +3,9 @@
 <start T2>
 <commit T1>
 <START CKPT(T2)>
-<T2,2, B,20>
+<T2,2, B,20>	
 <commit T2>
 <END CKPT>
 <start T3>
 <start T4>
-<T4,1, B,99>
+<T4,1, B,55>

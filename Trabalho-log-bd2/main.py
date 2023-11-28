@@ -93,8 +93,7 @@ try:
 
     # Lê o log, verifica transações e operações a serem desfeitas
     undo_operations = read_log(entradaLog)
-    print(undo_operations)
-
+    
     # Verifica valores e atualiza o banco de dados
     for op in undo_operations:
         if len(op) >= 4:  
