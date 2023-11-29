@@ -99,7 +99,7 @@ try:
         if len(op) >= 4:  
             cursor.execute(f'select {op[2]} from vintage_log where id = {op[1]}')
             result = cursor.fetchone()
-            if result is not None and int(result[0]) != int(op[3]):  
+            if result is not None and int(result[0]) == int(op[3]):  
                 cursor.execute(f'update vintage_log set {op[2]} = {op[3]} where id = {op[1]}')
 
     conn.commit()
